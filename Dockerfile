@@ -1,4 +1,4 @@
-FROM java8:jdk
+FROM jdk:windowsservercore
 
 RUN mkdir C:\\axe
 
