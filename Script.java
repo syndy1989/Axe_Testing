@@ -29,7 +29,7 @@ public class Script{
 	static ArrayList<String> pagename = new ArrayList<String>();
 	//Parsing value= new Parsing();
 	
-	static final URL scriptUrl = script.class.getResource("axe.min.js");
+	static final URL scriptUrl = Script.class.getResource("axe.min.js");
 
 	
 	public static void main(String[] args) throws FileNotFoundException, IOException, JSONException, ParseException{
