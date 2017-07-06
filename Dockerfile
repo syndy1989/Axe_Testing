@@ -50,10 +50,6 @@ COPY ./lib C:\\axe\\lib
 
 COPY Script.java C:\\axe\\Script.java
 
-COPY Parsing.java C:\\axe\\Parsing.java
-
-COPY Testing.java C:\\axe\\Testing.java
-
 COPY axe.min.js C:\\axe\\axe.min.js
 
 COPY phantomjs.exe C:\\axe\\phantomjs.exe
