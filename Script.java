@@ -1,4 +1,4 @@
-package docker;
+
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -8,11 +8,15 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.WebDriver;
+
+import com.nft.testing.Parsing;
+import com.nft.testing.Testing;
 
 public class script{
 	
@@ -62,7 +66,7 @@ public class script{
 		
 		//calling substring for unique file name
 		result1=t.Sub_String_url(driver.getCurrentUrl(), 1);
-		System.out.println("Result"+result1);
+		//System.out.println("Result"+result1);
 		
 		
 		//creating file with unique name
