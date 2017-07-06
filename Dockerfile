@@ -60,7 +60,7 @@ COPY phantomjs.exe C:\\axe\\phantomjs.exe
 
 COPY datafile.properties C:\\axe\\datafile.properties
 
-RUN javac -cp "./lib/*;" Script.java
+RUN javac -cp "./lib/*;" C:\\axe\\Script.java
 
 ENTRYPOINT ["java"]
 
