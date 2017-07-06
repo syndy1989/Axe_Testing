@@ -18,7 +18,7 @@ import org.openqa.selenium.WebDriver;
 import com.nft.testing.Parsing;
 import com.nft.testing.Testing;
 
-public class script{
+public class Script{
 	
 	
 	static Testing t=new Testing();
