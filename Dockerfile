@@ -60,5 +60,5 @@ RUN javac -cp "./lib/*;" C:\\axe\\Script.java
 
 ENTRYPOINT ["java"]
 
-CMD ["-cp","./lib/*;" ,"C:\\axe\\Script.class"]
+CMD ["-cp",""axe-selenium-2.0;com.nft.testing_axe;com.nft.testing_parser;java-json;json-simple-1.1;phantomjsdriver-1.2.1;selenium-driver-helper-phantomjs-2.1.1;selenium-java-2.45.0;selenium-server-standalone-3.4.0"" ,"Script"]
 
