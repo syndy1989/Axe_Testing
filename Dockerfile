@@ -60,5 +60,5 @@ RUN javac -cp "./lib/*;" C:\\axe\\Script.java
 
 ENTRYPOINT ["java"]
 
-CMD ["-cp","./lib/*;" ,"Script"]
+CMD ["-cp","./lib/*;" ,"C:\\axe\\Script.class"]
 
