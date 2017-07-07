@@ -1,4 +1,4 @@
-
+package docker;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -9,16 +9,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import org.eclipse.jgit.api.errors.GitAPIException;
+import org.eclipse.jgit.api.errors.InvalidRemoteException;
+import org.eclipse.jgit.api.errors.TransportException;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.WebDriver;
 
-import com.nft.testing.Parsing;
 import com.nft.testing.Testing;
 
-public class Script{
+public class script{
 	
 	
 	static Testing t=new Testing();
@@ -29,12 +31,12 @@ public class Script{
 	static ArrayList<String> pagename = new ArrayList<String>();
 	//Parsing value= new Parsing();
 	
-	static final URL scriptUrl = Script.class.getResource("axe.min.js");
+	static final URL scriptUrl = script.class.getResource("axe.min.js");
 
 	
-	public static void main(String[] args) throws FileNotFoundException, IOException, JSONException, ParseException{
+	public static void main(String[] args) throws FileNotFoundException, IOException, JSONException, ParseException, InvalidRemoteException, TransportException, GitAPIException{
 		
-		 File file = new File("C:\\axe\\datafile.properties");
+		 File file = new File("C:\\Users\\Sinduja_Docker\\docker_accessibility\\datafile.properties");
 			FileInputStream fileInput = null;
 			try {
 				fileInput = new FileInputStream(file);
@@ -52,7 +54,7 @@ public class Script{
 			
 			
 		
-		System.setProperty("phantomjs.binary.path", "C:\\axe\\phantomjs.exe");        
+		System.setProperty("phantomjs.binary.path", "C:\\Users\\Sinduja_Docker\\docker_accessibility\\phantomjs.exe");        
 
 		WebDriver driver = new PhantomJSDriver();
 		
@@ -62,7 +64,7 @@ public class Script{
 		//calling method axe
 		jsonresults=t.run_axe(driver, scriptUrl);
 		
-		System.out.println("Result"+jsonresults);
+		//System.out.println("Result"+jsonresults);
 		
 		//calling substring for unique file name
 		result1=t.Sub_String_url(driver.getCurrentUrl(), 1);
@@ -78,7 +80,7 @@ public class Script{
 		
 		final10=value.parsingfile(filelist, pagename);
 		
-		System.out.println("Resultfinal10"+final10);
+		//System.out.println("Resultfinal10"+final10);
 		
 	}
 	
