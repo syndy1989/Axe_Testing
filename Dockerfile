@@ -48,7 +48,7 @@ WORKDIR C:\\docker_accessibility
 
 COPY ./lib C:\\docker_accessibility\\lib
 
-COPY Docker_Accessibility.java C:\\axe\\Docker_Accessibility.java
+COPY Docker_Accessibility.java C:\\docker_accessibility\\Docker_Accessibility.java
 
 COPY axe.min.js C:\\docker_accessibility\\axe.min.js
 
