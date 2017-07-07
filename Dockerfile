@@ -48,7 +48,7 @@ WORKDIR C:\\docker_accessibility
 
 COPY ./lib C:\\docker_accessibility\\lib
 
-COPY Docker_Accessibility.java C:\\docker_accessibility\\Docker_Accessibility.java
+COPY Docker_Accessibility.jar C:\\docker_accessibility\\Docker_Accessibility.jar
 
 COPY axe.min.js C:\\docker_accessibility\\axe.min.js
 
@@ -56,9 +56,9 @@ COPY phantomjs.exe C:\\docker_accessibility\\phantomjs.exe
 
 COPY datafile.properties C:\\docker_accessibility\\datafile.properties
 
-RUN javac -cp "./lib/*;" C:\\docker_accessibility\\Docker_Accessibility.java
+RUN javac -jar -cp "./lib/*;" Docker_Accessibility.jar
 
 ENTRYPOINT ["java"]
 
-CMD ["-cp",""./lib/*;"" ,"Docker_Accessibility"]
+CMD ["-jar","-cp",""./lib/*;"" ,"Docker_Accessibility"]
 
