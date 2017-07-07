@@ -56,9 +56,10 @@ COPY phantomjs.exe C:\\docker_accessibility\\phantomjs.exe
 
 COPY datafile.properties C:\\docker_accessibility\\datafile.properties
 
-RUN javac -jar -cp "./lib/*;" Docker_Accessibility.jar
+#RUN javac -jar -cp "./lib/*;" Docker_Accessibility.jar
 
 ENTRYPOINT ["java"]
 
-CMD ["-jar","-cp",""./lib/*;"" ,"Docker_Accessibility"]
+#CMD ["-jar","-cp",""./lib/*;"" ,"Docker_Accessibility"]
 
+CMD ["-jar","Docker_Accessibility.jar"]
