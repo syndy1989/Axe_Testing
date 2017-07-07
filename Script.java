@@ -1,10 +1,11 @@
-package docker;
+
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -14,13 +15,15 @@ import org.eclipse.jgit.api.errors.InvalidRemoteException;
 import org.eclipse.jgit.api.errors.TransportException;
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.simple.parser.ParseException;
-import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
 
+import com.nft.parsing_docker.Parsing;
 import com.nft.testing.Testing;
 
-public class script{
+
+
+public class Docker_Accessibility{
 	
 	
 	static Testing t=new Testing();
@@ -31,12 +34,12 @@ public class script{
 	static ArrayList<String> pagename = new ArrayList<String>();
 	//Parsing value= new Parsing();
 	
-	static final URL scriptUrl = script.class.getResource("axe.min.js");
+	static final URL scriptUrl = Docker_Accessibility.class.getResource("axe.min.js");
 
 	
-	public static void main(String[] args) throws FileNotFoundException, IOException, JSONException, ParseException, InvalidRemoteException, TransportException, GitAPIException{
+	public static void main(String[] args) throws FileNotFoundException, IOException, JSONException, ParseException, InvalidRemoteException, TransportException, GitAPIException, org.json.simple.parser.ParseException{
 		
-		 File file = new File("C:\\Users\\Sinduja_Docker\\docker_accessibility\\datafile.properties");
+		 File file = new File("C:\\docker_accessibility\\datafile.properties");
 			FileInputStream fileInput = null;
 			try {
 				fileInput = new FileInputStream(file);
@@ -54,7 +57,7 @@ public class script{
 			
 			
 		
-		System.setProperty("phantomjs.binary.path", "C:\\Users\\Sinduja_Docker\\docker_accessibility\\phantomjs.exe");        
+		System.setProperty("phantomjs.binary.path", "C:\\docker_accessibility\\phantomjs.exe");        
 
 		WebDriver driver = new PhantomJSDriver();
 		
@@ -64,11 +67,10 @@ public class script{
 		//calling method axe
 		jsonresults=t.run_axe(driver, scriptUrl);
 		
-		//System.out.println("Result"+jsonresults);
 		
 		//calling substring for unique file name
 		result1=t.Sub_String_url(driver.getCurrentUrl(), 1);
-		//System.out.println("Result"+result1);
+		
 		
 		
 		//creating file with unique name
@@ -80,7 +82,7 @@ public class script{
 		
 		final10=value.parsingfile(filelist, pagename);
 		
-		//System.out.println("Resultfinal10"+final10);
+	
 		
 	}
 	
