@@ -42,23 +42,23 @@ RUN $url = ('https://github.com/ojdkbuild/ojdkbuild/releases/download/{0}/{1}' -
 	\
 	Write-Host 'Complete.';
 
-RUN mkdir C:\\axe
+RUN mkdir C:\\docker_accessibility
 
-WORKDIR C:\\axe
+WORKDIR C:\\docker_accessibility
 
-COPY ./lib C:\\axe\\lib
+COPY ./lib C:\\docker_accessibility\\lib
 
-COPY Script.java C:\\axe\\Script.java
+COPY Docker_Accessibility.java C:\\axe\\Docker_Accessibility.java
 
-COPY axe.min.js C:\\axe\\axe.min.js
+COPY axe.min.js C:\\docker_accessibility\\axe.min.js
 
-COPY phantomjs.exe C:\\axe\\phantomjs.exe
+COPY phantomjs.exe C:\\docker_accessibility\\phantomjs.exe
 
-COPY datafile.properties C:\\axe\\datafile.properties
+COPY datafile.properties C:\\docker_accessibility\\datafile.properties
 
-RUN javac -cp "./lib/*;" C:\\axe\\Script.java
+RUN javac -cp "./lib/*;" C:\\docker_accessibility\\Docker_Accessibility.java
 
 ENTRYPOINT ["java"]
 
-CMD ["-cp",""./lib/*;"" ,"Script"]
+CMD ["-cp",""./lib/*;"" ,"Docker_Accessibility"]
 
