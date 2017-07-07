@@ -1,3 +1,5 @@
+
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -35,7 +37,7 @@ public class Docker_Accessibility{
 	static final URL scriptUrl = Docker_Accessibility.class.getResource("axe.min.js");
 
 	
-	public static void main(String[] args) throws FileNotFoundException, IOException, JSONException, ParseException, InvalidRemoteException, TransportException, GitAPIException, org.json.simple.parser.ParseException{
+	public static void main(String[] args) {
 		
 		 File file = new File("C:\\docker_accessibility\\datafile.properties");
 			FileInputStream fileInput = null;
@@ -63,7 +65,12 @@ public class Docker_Accessibility{
 		
 		
 		//calling method axe
-		jsonresults=t.run_axe(driver, scriptUrl);
+		try {
+			jsonresults=t.run_axe(driver, scriptUrl);
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		
 		//calling substring for unique file name
@@ -78,7 +85,27 @@ public class Docker_Accessibility{
 		
 		Parsing value=new Parsing();
 		
-		final10=value.parsingfile(filelist, pagename);
+		try {
+			final10=value.parsingfile(filelist, pagename);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InvalidRemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (TransportException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (org.json.simple.parser.ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (GitAPIException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	
 		
@@ -87,3 +114,4 @@ public class Docker_Accessibility{
 		
 	
 }
+
